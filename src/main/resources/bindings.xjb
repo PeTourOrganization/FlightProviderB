@@ -1,0 +1,13 @@
+<jaxb:bindings version="3.0"
+               xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+  <jaxb:bindings schemaLocation="/air_v54_/Air.wsdl" node="//xs:schema">
+
+      <jaxb:bindings node=".//xs:element[@ref='AmenitiesRef']">
+          <jaxb:property name="AmenitiesReferenceList"/>
+      </jaxb:bindings>
+
+  </jaxb:bindings>
+</jaxb:bindings>

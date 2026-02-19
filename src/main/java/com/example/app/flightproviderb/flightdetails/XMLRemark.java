@@ -1,0 +1,192 @@
+
+package com.example.app.flightproviderb.flightdetails;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlValue;
+
+
+/**
+ * <p>Java class for anonymous complex type</p>.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.</p>
+ * 
+ * <pre>{@code
+ * <complexType>
+ *   <simpleContent>
+ *     <extension base="<http://www.w3.org/2001/XMLSchema>string">
+ *       <attGroup ref="{http://www.travelport.com/schema/common_v54_0}attrElementKeyResults"/>
+ *       <attribute name="Key" type="{http://www.travelport.com/schema/common_v54_0}typeRef" />
+ *       <attribute name="Category">
+ *         <simpleType>
+ *           <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *             <maxLength value="10"/>
+ *           </restriction>
+ *         </simpleType>
+ *       </attribute>
+ *     </extension>
+ *   </simpleContent>
+ * </complexType>
+ * }</pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "value"
+})
+@XmlRootElement(name = "XMLRemark", namespace = "http://www.travelport.com/schema/common_v54_0")
+public class XMLRemark {
+
+    @XmlValue
+    protected String value;
+    @XmlAttribute(name = "Key")
+    protected String key;
+    /**
+     * A category to group and organize the various remarks. This is not required, but it is recommended.
+     * 
+     */
+    @XmlAttribute(name = "Category")
+    protected String category;
+    /**
+     * This attribute is used to show the action results of an element. 
+     *               Possible values are "A" (when elements have been added to the UR) and "M" (when existing elements have been modified). Response only.
+     * 
+     */
+    @XmlAttribute(name = "ElStat")
+    protected TypeElementStatus elStat;
+    /**
+     * If a duplicate key is found where we are adding elements in some cases like URAdd, then instead of erroring out set this attribute to true.
+     * 
+     */
+    @XmlAttribute(name = "KeyOverride")
+    protected Boolean keyOverride;
+
+    /**
+     * Gets the value of the value property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * Sets the value of the value property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
+     * Gets the value of the key property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getKey() {
+        return key;
+    }
+
+    /**
+     * Sets the value of the key property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setKey(String value) {
+        this.key = value;
+    }
+
+    /**
+     * A category to group and organize the various remarks. This is not required, but it is recommended.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * Sets the value of the category property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     * @see #getCategory()
+     */
+    public void setCategory(String value) {
+        this.category = value;
+    }
+
+    /**
+     * This attribute is used to show the action results of an element. 
+     *               Possible values are "A" (when elements have been added to the UR) and "M" (when existing elements have been modified). Response only.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TypeElementStatus }
+     *     
+     */
+    public TypeElementStatus getElStat() {
+        return elStat;
+    }
+
+    /**
+     * Sets the value of the elStat property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TypeElementStatus }
+     *     
+     * @see #getElStat()
+     */
+    public void setElStat(TypeElementStatus value) {
+        this.elStat = value;
+    }
+
+    /**
+     * If a duplicate key is found where we are adding elements in some cases like URAdd, then instead of erroring out set this attribute to true.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isKeyOverride() {
+        return keyOverride;
+    }
+
+    /**
+     * Sets the value of the keyOverride property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     * @see #isKeyOverride()
+     */
+    public void setKeyOverride(Boolean value) {
+        this.keyOverride = value;
+    }
+
+}
