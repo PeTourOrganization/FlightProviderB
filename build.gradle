@@ -1,9 +1,10 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.4.2'
+//    id 'org.springframework.boot' version '3.4.2'
+    id 'org.springframework.boot' version '3.4.7'
     id 'io.spring.dependency-management' version '1.1.7'
     // JAXB Plugin
-    id 'com.intershop.gradle.jaxb' version '7.0.0'
+//    id 'com.intershop.gradle.jaxb' version '7.0.0'
 }
 
 group = 'com.example.app'
@@ -31,45 +32,49 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.15'
+//    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.15'
 
     // Spring Boot WS starter for SOAP services
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
     // Required for WSDL Generation
     implementation 'wsdl4j:wsdl4j'
     // JAXB API
-    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+//    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+    //    implementation 'jakarta.xml.soap:jakarta.xml.soap-api:3.0.1'
+    //    implementation 'com.sun.xml.messaging.saaj:saaj-impl:3.0.4'
+
     // JAXB Runtime (Required engine for Runtime)
-    runtimeOnly 'com.sun.xml.bind:jaxb-impl:4.0.0'
-    jaxb 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
-    jaxb 'com.sun.xml.bind:jaxb-xjc:4.0.0'
-    jaxb 'com.sun.xml.bind:jaxb-impl:4.0.0'
+//    runtimeOnly 'com.sun.xml.bind:jaxb-impl:4.0.0'
+//    jaxb 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+//    jaxb 'com.sun.xml.bind:jaxb-xjc:4.0.0'
+//    jaxb 'com.sun.xml.bind:jaxb-impl:4.0.0'
 
 //    cxf 'org.apache.cxf:apache-cxf:3.3.6'
-    cxf 'org.apache.cxf:apache-cxf:4.1.5'
+//    cxf 'org.apache.cxf:apache-cxf:4.1.5'
 
+    testImplementation 'org.springframework.ws:spring-ws-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-tasks.register('FlightDetailsWsdl2', JavaExec) {
-    ext {
-        wsdlDir = file("./src/main/resources")
-        wsdlFile = file("${wsdlDir}/air_v54_0/Air.wsdl")
-        packageName = "com.example.app.flightproviderb.flightdetails"
-        autonameResolution = true
-        wsdlLocation = "classpath:/air_v54_0/Air.wsdl"
-//        bindings = "./src/main/resources/bindings.xjb"
-        outDir = "./src/main/java"
-    }
-    mainClass = 'org.apache.cxf.tools.wsdlto.WSDLToJava'
-//    args('-client', '-autoNameResolution', '-p', packageName, '-b', bindings, '-wsdlLocation', wsdlLocation, '-d', outDir, wsdlFile)
-    args('-client', '-autoNameResolution', '-p', packageName, '-wsdlLocation', wsdlLocation, '-d', outDir, wsdlFile)
-    classpath = configurations.cxf
-
-    // set task inputs/outputs for up-to-date checks
-    inputs.file wsdlFile
-    outputs.dir outDir
-}
+//tasks.register('FlightDetailsWsdl2', JavaExec) {
+//    ext {
+//        wsdlDir = file("./src/main/resources")
+//        wsdlFile = file("${wsdlDir}/air_v54_0/Air.wsdl")
+//        packageName = "com.example.app.flightproviderb.flightdetails"
+//        autonameResolution = true
+//        wsdlLocation = "classpath:/air_v54_0/Air.wsdl"
+////        bindings = "./src/main/resources/bindings.xjb"
+//        outDir = "./src/main/java"
+//    }
+//    mainClass = 'org.apache.cxf.tools.wsdlto.WSDLToJava'
+////    args('-client', '-autoNameResolution', '-p', packageName, '-b', bindings, '-wsdlLocation', wsdlLocation, '-d', outDir, wsdlFile)
+//    args('-client', '-autoNameResolution', '-p', packageName, '-wsdlLocation', wsdlLocation, '-d', outDir, wsdlFile)
+//    classpath = configurations.cxf
+//
+//    // set task inputs/outputs for up-to-date checks
+//    inputs.file wsdlFile
+//    outputs.dir outDir
+//}
 
 
 tasks.named('test') {

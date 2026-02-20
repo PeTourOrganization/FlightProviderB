@@ -1,22 +1,25 @@
 package com.example.app.flightproviderb.service;
 
+import com.example.app.flightproviderb.util.LocalDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.time.LocalDateTime;
 
 @XmlRootElement(name = "SearchRequest", namespace = "http://localhost:8082/flights")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SearchRequest {
-	@XmlElement(required = true)
+	@XmlElement(namespace = "http://localhost:8082/flights", required = true)
 	private String origin = "";
 
-	@XmlElement(required = true)
+	@XmlElement(namespace = "http://localhost:8082/flights", required = true)
 	private String destination = "";
 
-	@XmlElement(required = true)
+	@XmlElement(namespace = "http://localhost:8082/flights", required = true)
+	@XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
 	private LocalDateTime departureDate;
 
 	// Constructors

@@ -17,7 +17,7 @@ public class ProviderBEndPoint {
         this.searchService = searchService;
     }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "searchRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "SearchRequest")
     @ResponsePayload
     public SearchResult getFlightsAvailable(@RequestPayload SearchRequest searchRequest) {
         return searchService.availabilitySearch(searchRequest);
