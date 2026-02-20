@@ -1,8 +1,16 @@
 package com.example.app.flightproviderb.service;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlType;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Flight", propOrder = {
+		"flightNo", "origin", "destination", "departuredatetime", "arrivaldatetime", "price"
+})
 public class Flight {
 
 	private String flightNo;
@@ -11,7 +19,9 @@ public class Flight {
 	private LocalDateTime departuredatetime;
 	private LocalDateTime arrivaldatetime;
 	private BigDecimal price;
-	
+
+	public Flight() {}
+
 	public Flight(String flightNo, String origin, String destination, LocalDateTime departuredatetime,
 			LocalDateTime arrivaldatetime, BigDecimal price) {
 		super();

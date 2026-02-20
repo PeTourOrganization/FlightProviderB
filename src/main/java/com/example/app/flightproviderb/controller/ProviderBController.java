@@ -22,7 +22,7 @@ public class ProviderBController {
     public String getFlightsAvailable(
             @RequestParam String origin,
             @RequestParam String destination,
-            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime departureDate
+            @RequestParam @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss") LocalDateTime departureDate
     ) {
         return providerBService.flightsAvailable(origin, destination, departureDate);
     }

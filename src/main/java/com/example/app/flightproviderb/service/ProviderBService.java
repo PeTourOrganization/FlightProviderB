@@ -3,7 +3,6 @@ package com.example.app.flightproviderb.service;
 import com.example.app.flightproviderb.flightdetails.AirFaultMessage;
 import com.example.app.flightproviderb.flightdetails.FlightInformationReq;
 import com.example.app.flightproviderb.flightdetails.FlightService;
-import jakarta.xml.ws.WebServiceFeature;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
