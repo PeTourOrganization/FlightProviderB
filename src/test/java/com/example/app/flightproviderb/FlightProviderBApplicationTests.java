@@ -37,7 +37,7 @@ class FlightProviderBApplicationTests {
     @Test
     public void testGetFlightsAvailableSuccess() throws XPathExpressionException {
         var requestPayload = new StringSource(
-                "<flig:SearchRequest xmlns:flig='http://localhost:8082/flights'>" +
+                "<flig:SearchRequest xmlns:flig='http://petour.com/flights'>" +
                         "   <flig:origin>IST</flig:origin>" +
                         "   <flig:destination>JFK</flig:destination>" +
                         "   <flig:departureDate>2026-05-25T09:00:00</flig:departureDate>" +
@@ -47,7 +47,7 @@ class FlightProviderBApplicationTests {
         mockClient.sendRequest(withPayload(requestPayload))
                 .andExpect(noFault())
                 .andExpect(xpath("//ns3:hasError",
-                        Collections.singletonMap("ns3", "http://localhost:8082/flights"))
+                        Collections.singletonMap("ns3", "http://petour.com/flights"))
                         .evaluatesTo(false));
     }
 

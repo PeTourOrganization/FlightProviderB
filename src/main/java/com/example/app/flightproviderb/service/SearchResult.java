@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name = "SearchResult", namespace = "http://localhost:8082/flights")
+@XmlRootElement(name = "SearchResult", namespace = "http://petour.com/flights")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SearchResult {
 	@XmlElement(required = true)
